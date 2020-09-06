@@ -2,7 +2,7 @@ version: "3"
 
 services:
   pgadmin:
-    container_name: be-database-monitor
+    container_name: donex-be-database-monitor
     image: dpage/pgadmin4
     environment:
       - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAI}
