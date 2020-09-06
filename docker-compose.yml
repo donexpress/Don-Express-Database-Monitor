@@ -5,12 +5,12 @@ services:
     container_name: be-database-monitor
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-test@donexpress.com}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-test}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAI}L
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     volumes:
       - pgadmin:/root/.pgadmin
     ports:
-      - "${PGADMIN_PORT:-5050}:80"
+      - "7327:80"
     #restart: unless-stopped
 
 volumes:
