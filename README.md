@@ -23,4 +23,4 @@ For security reasons any connection from the browser to the DB instance goes thr
 
 ### Additional considerations
 
-Needless to say the machine you're connecting through SSH must be listening for ssh connections (usually on port 22)
+Needless to say the machine you're connecting through SSH must be listening for ssh connections (usually on port 22). Moreover, the public portion of the rsa key you used on step 3 before must also be present in `$HOME/.ssh/authorized_keys` inside the server.
