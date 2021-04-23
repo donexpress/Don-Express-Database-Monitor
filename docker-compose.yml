@@ -2,8 +2,8 @@ version: "3"
 
 services:
   pgadmin:
-    container_name: donex-be-database-monitor
-    image: dpage/pgadmin4
+    container_name: donex-db-monitor
+    image: dpage/pgadmin4:5.2
     environment:
       - PGADMIN_DEFAULT_EMAIL
       - PGADMIN_DEFAULT_PASSWORD
@@ -13,5 +13,18 @@ services:
       - "7327:80"
     #restart: unless-stopped
 
+  prod-pgadmin:
+    container_name: donex-prod-db-monitor
+    image: dpage/pgadmin4:5.2
+    environment:
+      - PGADMIN_SECRET_EMAIL
+      - PGADMIN_SECRET_PASSWORD
+    volumes:
+      - pgadmin-prod:/root/.pgadmin
+    ports:
+      - "7328:80"
+    #restart: unless-stopped
+
 volumes:
   pgadmin:
+  pgadmin-prod:
