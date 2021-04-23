@@ -17,8 +17,8 @@ services:
     container_name: donex-prod-db-monitor
     image: dpage/pgadmin4:5.2
     environment:
-      - PGADMIN_SECRET_EMAIL
-      - PGADMIN_SECRET_PASSWORD
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_SECRET_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_SECRET_PASSWORD}
     volumes:
       - pgadmin-prod:/root/.pgadmin
     ports:
